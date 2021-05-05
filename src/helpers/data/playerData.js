@@ -4,8 +4,15 @@ import firebaseConfig from '../apiKeys';
 const dbURL = firebaseConfig.databaseURL;
 const getUserPlayers = (uid) => new Promise((resolve, reject) => {
   axios.get(`${dbURL}/players.json?orderBy="uid"&equalTo="${uid}"`)
-    .then((response) => resolve(response.data))
+    .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });
-
-export default getUserPlayers;
+const createPlayer = (playerObject, uid) => new Promise((resolve, reject) => {
+  axios.post(`${dbURL}/players.json`, playerObject)
+    .then((response) => {
+      const body = { id: response.data.name };
+      axios.patch(`${dbURL}/players/${response.data.name}.json`, body)
+        .then(() => getUserPlayers(uid).then(resolve));
+    }).catch((error) => reject(error));
+});
+export { createPlayer, getUserPlayers };
