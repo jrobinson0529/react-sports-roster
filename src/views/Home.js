@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Home({ time }) {
+function Home({ user }) {
   return (
     <>
-      <h1>Welcome to home</h1>
-      <h3>{time}</h3>
+      <h1>Hello, {user.fullName} welcome to your Sports roster</h1>
     </>
   );
 }
 Home.propTypes = {
-  time: PropTypes.string
+  user: PropTypes.any
 };
 
 export default Home;
