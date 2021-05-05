@@ -5,12 +5,11 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   Button,
 } from 'reactstrap';
-import { signInUser, signOutUser } from '../helpers/auth';
+import { signOutUser } from '../helpers/auth';
 
 const NavBar = ({ user }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +19,7 @@ const NavBar = ({ user }) => {
   return (
     <div>
       <Navbar color="dark" dark expand="md">
-        <NavbarBrand href="/">Home</NavbarBrand>
+        <Link className='navbar-brand'to='/home'>Home</Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
@@ -34,8 +33,7 @@ const NavBar = ({ user }) => {
           { user !== null
             && <div className='auth-btn-container'>
                 {
-                  user ? <Button color='danger' onClick={signOutUser}>SignOut?</Button>
-                    : <Button color='info' onClick={signInUser}>SignIN!</Button>
+                  user && <Button color='danger' onClick={signOutUser}>SignOut?</Button>
                 }
               </div>
             }
