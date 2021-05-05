@@ -17,7 +17,7 @@ function App() {
         const userInfo = {
           fullName: authed.displayName,
           username: authed.email.split('@gmail.com')[0],
-          uid: authed.uid
+          uid: authed.uid,
         };
         setUser(userInfo);
       } else if (user || user === null) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import About from '../views/About';
+import About from '../views/Form';
 import Users from '../views/Users';
 import { NoAuthRoute, PrivateRoute } from './PrivateRoute';
 import Home from '../views/Home';
