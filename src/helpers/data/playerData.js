@@ -15,4 +15,10 @@ const createPlayer = (playerObject, uid) => new Promise((resolve, reject) => {
         .then(() => getUserPlayers(uid).then(resolve));
     }).catch((error) => reject(error));
 });
-export { createPlayer, getUserPlayers };
+const deletePlayer = (id, uid) => new Promise((resolve, reject) => {
+  axios.delete(`${dbURL}/players/${id}.json`)
+    .then(() => getUserPlayers(uid).then(resolve))
+    .catch((error) => reject(error));
+});
+
+export { createPlayer, getUserPlayers, deletePlayer };

@@ -19,7 +19,7 @@ function Team({ user }) {
       <Button color='info' onClick={handleClick}>Add New Player</Button>
       { adding && <PlayerForm formTitle={'Add player form'} setTeam={setTeam} user={user}/>}
       <div className='team-container d-flex flex-wrap p-3'>
-      {team.map((player) => <Player key={player.id} {...player}/>)}
+      {team.map((player) => <Player key={player.id} {...player} uid={user.uid} setTeam={setTeam}/>)}
       </div>
     </div>
   );
