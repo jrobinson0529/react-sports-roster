@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import {
   Button, Form, FormGroup, Label, Input
 } from 'reactstrap';
-import { createPlayer } from '../helpers/data/playerData';
+import { createPlayer, updatePlayer } from '../helpers/data/playerData';
 
 function PlayerForm({
-  formTitle, setTeam, user, ...playerObject
+  formTitle, setTeam, uid, ...playerObject
 }) {
   const [player, setPlayer] = useState({
     id: playerObject?.id || null,
     name: playerObject?.name || '',
     position: playerObject?.position || '',
-    uid: playerObject?.uid || user.uid,
+    uid,
     imageURL: playerObject?.imageURL || ''
   });
   const handleInputChange = (e) => {
@@ -23,7 +23,11 @@ function PlayerForm({
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    createPlayer(player, user.uid).then((response) => setTeam(response));
+    if (playerObject.id) {
+      updatePlayer(player.id, uid, player).then((response) => setTeam(response));
+    } else {
+      createPlayer(player, uid).then((response) => setTeam(response));
+    }
   };
   return (
     <>
@@ -58,6 +62,6 @@ function PlayerForm({
 PlayerForm.propTypes = {
   formTitle: PropTypes.string,
   setTeam: PropTypes.func,
-  user: PropTypes.object,
+  uid: PropTypes.string,
 };
 export default PlayerForm;

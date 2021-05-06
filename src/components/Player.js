@@ -38,7 +38,7 @@ const Player = ({ uid, setTeam, ...playerObject }) => {
           <Button color='danger' onClick={() => handleClick('delete')}>Delete</Button>
           </div>
         </CardBody>
-        { editing && <PlayerForm formTitle={'Edit player form'} {...playerObject}/>
+        { editing && <PlayerForm formTitle={'Edit player form'} {...playerObject} uid={uid} setTeam={setTeam}/>
         }
       </Card>
     </div>);

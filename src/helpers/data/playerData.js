@@ -20,5 +20,12 @@ const deletePlayer = (id, uid) => new Promise((resolve, reject) => {
     .then(() => getUserPlayers(uid).then(resolve))
     .catch((error) => reject(error));
 });
+const updatePlayer = (id, uid, playerObject) => new Promise((resolve, reject) => {
+  axios.put(`${dbURL}/players/${id}.json`, playerObject)
+    .then(() => getUserPlayers(uid).then(resolve))
+    .catch((error) => reject(error));
+});
 
-export { createPlayer, getUserPlayers, deletePlayer };
+export {
+  createPlayer, getUserPlayers, deletePlayer, updatePlayer
+};

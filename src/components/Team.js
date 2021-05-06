@@ -17,7 +17,7 @@ function Team({ user }) {
   return (
     <div className='d-flex flex-wrap p-3 justify-content-center'>
       <Button color='info' onClick={handleClick}>Add New Player</Button>
-      { adding && <PlayerForm formTitle={'Add player form'} setTeam={setTeam} user={user}/>}
+      { adding && <PlayerForm formTitle={'Add player form'} setTeam={setTeam} uid={user.uid}/>}
       <div className='team-container d-flex flex-wrap p-3'>
       {team.map((player) => <Player key={player.id} {...player} uid={user.uid} setTeam={setTeam}/>)}
       </div>
