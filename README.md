@@ -1,74 +1,20 @@
-# React Template
-
-**Use this template to get up and running quickly on projects.**
-
-## Get Started
-```npm i``` to install dependencies!
-
-
-- [Steps to deploy](https://github.com/nss-nightclass-projects/REACT-Deployment-Netlify)
-### Helpful JS tool docs!
-- [MomentJS](https://momentjs.com/) Great library for date/time related processes
-- [React Router](https://reactrouter.com/) Essential to using links and making a SPA look like multiple pages.
-- [React](https://reactjs.org/) React docs
-- [Reactstrap](https://reactstrap.github.io/) Bootstrap for react!
-- [Semantic UI](https://react.semantic-ui.com/)
-- [React Animation](https://nearform.github.io/react-animation/) Awesome simple to use library for quick easy component based animations
-
-# README template
-
-## Name of the project
-Overview of the project
-### Link to your wireframes/prototype
-### Link to the deployed project
-### Link to your project board
-### User Stories
-### Features
-### Screenshots
-### Contributors
-### Loom video walkthrough
-
-
 # Sports Roster
-For this project you will be building a team roster for a sports team.  Pick any sport you want (but ~hockey~ American Football is clearly the best choice).  Theme your project based on the sport.
+This is the first full CRUD React application that I developed. It is a card based team roster builder where you can add, update, delete, create and read cards based on basketball. Full CRUD in React. EXCITING!!!
 
-## Requirements
-Here is the ERD for this project:
+### ERD/Screenshots
 
+![30a5371bc207bc38008cf9a7aee9265f](https://user-images.githubusercontent.com/45837967/118664024-c1e6ee80-b7b6-11eb-9e28-c5ae5c80f1a2.png)
 ![ERD](https://github.com/nss-nightclass-projects/exercise-vault/raw/master/images/react_roster_erd.png)
 
-Here are the user stories that need to be completed:
-### Authentication
-* As a user, who is logged out, I should only be able to see the authentication screen
+### User stories
+- As a user I will land on the 'Home' view where I will be promted to log in to be able to interact with the site.
+- After logging in I can see my roster as well as a sign out button and a button to open the new player form.
+- I can delete my roster cards or edit them individually.
+- With the form I can create a new player to add to the roster and give it all the relevant data.
 
-* As a user who is logged out, I would like to be able to authenticate by clicking on a button.
-
-* As a user who is logged out, I would like to be able to click on an authentication button and login via google.
-
-* As a user who is logged in, I should not be able to see the authentication button.
-
-* As a user who is logged in, I should be able to see the Team component.
-
-### CREATE Players
-* As an authenticated user, I should be able to click a button that displays a form to add a new player.
-
-* As an authenticated user, when I fill out the form and submit a new Player should be created in firebase and should now show in my Team component.
-
-### READ Players
-* As an authenticated user, I should be able to see the Team component with all the players I have created.
-
-* As an authenticated user I should not be able to see players that were created by another user.
-
-### UPDATE Players
-* As an authenticated user, I should be able to see an edit button on each player card.
-
-* As an authenticated user, when I click the edit button I should see a form with the player information for that user pre-populated.
-
-* As an authenticated user, I should be able to edit the information in the form and hit the submit button.
-
-* As an authenticated user, when I submit the edit form firebase should be updated (PUT request) and the Team component should update
-
-### DELETE Players
-* As an authenticated user, I should see a delete button on each player.
-
-* As an authenticated user, when I click a delete button that player should be removed from firebase and the Team component should update.
+### Project Board
+https://github.com/jrobinson0529/react-sports-roster/projects/2
+### Deployed site
+https://jolly-heyrovsky-3e5b48.netlify.app/home
+### Loom Video
+https://www.loom.com/share/99f5b86c4d554050aad2521e79bd4d69
